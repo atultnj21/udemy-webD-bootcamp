@@ -1,0 +1,32 @@
+/****************TAG SELECTORS**********************/
+h1{
+  color: red;
+  font-size: 90px;
+}
+
+/* pseudo classes ":" */
+img:hover{
+  background-color: gold;
+}
+
+
+/*************CLASS SELECTORS************************/
+.burger{
+  background-color: green;
+}
+.broccoli{
+  background-color: red;
+}
+.circular{
+  border-radius: 100%
+}
+
+/**************ID SELECTORS*************************/
+
+/* this overrides the above style */
+/* you can only have a single instance
+of one particular id name inside a single
+page */
+#heading{
+  color:blue;
+}

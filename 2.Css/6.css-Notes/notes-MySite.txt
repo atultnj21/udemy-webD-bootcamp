@@ -1,0 +1,67 @@
+text-align: center; inside the container or the parent
+element will center everything inside that does,nt have a
+width set , if it is a block element and it has a width set
+then you are going to center it using margin
+h1{
+  /* width: 10%; */
+  /* T R B L clockwise */
+  /* margin: 0 auto 0 auto; */
+  /* TB LR */
+  /* margin: 0 auto */
+  margin: 50px auto 0 auto;
+  font-family: 'Sacramento', cursive;
+  font-size: 5.62rem;
+  color: #7C83FD;
+  line-height: 2;
+}
+
+In order to position a element relative to something
+one of its parent should have relative position otherrwise 
+it is relative to the body 
+#top-container{
+  background-color: #DBE6FD;
+  position: relative;
+  padding-top: 100px;
+}
+.code{
+  position: absolute;
+  left:12%;
+  top:43%;
+  width: 13%;
+}
+.keyboard{
+  position: absolute;
+  right:16%;
+  top:5%;
+  width:13%;
+}
+
+Now sometimes when you float an element you might not want 
+all of the text to be wrapped around it.
+example say if we only wanted that title to wrap around this 
+image and to be on the right of
+the image then we can actually use another property to make 
+sure that  text does not wrap and end up at the bottom.
+that property is called clear
+
+.skills-img{
+  width: 25%;
+  float: left;
+  margin-right:30px ;
+}
+.skills-img-second{
+  width: 25%;
+  float: right;
+  margin-left:30px ;
+}
+
+.skills-description{
+  clear:left;
+}
+.skills-description-second{
+  clear: right;
+}
+
+DO NOT USE FLOAT FOR POSITIONING
+
+https://css3buttongenerator.com/

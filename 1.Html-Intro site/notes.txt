@@ -1,0 +1,22 @@
+html boilerplate 
+h1 heading tag
+<p> Paragraph tag 
+<em> emphasize element
+<strong> : bold
+<hr> : Horizontal Rule
+<br> : Line Break
+bullet list
+<ul> : Unordered list
+<li>: list item
+ol: ordered list
+img src : image source , alt: Alternate text
+a : Anchor tag
+href : hyperlink reference
+tr : table row
+td : table data
+<th></th> : table heading
+<thead> </thead> : table head
+<tbody></tbody> : table body
+<tfoot></tfoot> :table footers
+cellspacing: defines the size of the space between two cells in a
+percentage value or pixels

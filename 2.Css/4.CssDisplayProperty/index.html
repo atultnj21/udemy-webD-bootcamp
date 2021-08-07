@@ -1,0 +1,65 @@
+<!-- www.favicon.cc
+https://www.appbrewery.co/p/web-development-course-resources/
+
+css display property
+--------------------
+Block
+Inline
+Inline-Block
+None -> removes the element
+
+by default some elements are block display ex:h1,p,divs,lists,forms
+block element take up the whole width of screen
+
+span is an inline display element unlike block Inline
+display element take as much space it needs
+ex of inline elements:
+spans
+images
+anchors
+with inline elements you can't change the width
+
+You can actually change the display property of
+any given element-->
+
+<!--What should i do if i wanted elements
+ that can occupy the same line but at the
+ same time i can set their widths,
+ -there is another type of display called inline Block
+ for this-->
+
+ <!-- None: it simply removes that element from
+the website
+if you have a quiz then you might wanna
+hide the ans there is two ways to do that
+1) None
+2) visibilty: hidden; -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      p{
+        background-color:red;
+        /* width:100px; */
+        /* display:inline; */
+        display:inline-block;
+        width : 100px;
+      }
+      span{
+        background-color:blue;
+        /* display:block; */
+        display: inline-block;
+        width:100px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>hello</p>
+    <p>World</p>
+    <span>Hello</span>
+    <span>World</span>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!-- parent does'nt always have to be body it can also be
+the closest parent that has a relative layout -->
+<style>
+  .container{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color:grey;
+  }
+  body{
+    margin: 0;
+
+  }
+  .red{
+    height: 100px;
+    width: 100px;
+    background-color:red;
+    position:absolute;
+
+    right:0px;
+  }
+  .blue{
+    height: 100px;
+    width: 100px;
+    background-color:blue;
+    position:absolute;
+
+    left:100px;
+    top:0;
+  }
+  .yellow{
+    height: 100px;
+    width: 100px;
+    background-color:yellow;
+    position:fixed;
+    top:0
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="red">
+
+    </div>
+  </div>
+
+  <div class="blue">
+
+  </div>
+  <div class="yellow">
+
+  </div>
+  <h1>Scroll down</h1>
+  <h1>Scroll down</h1>
+  <h1>Scroll down</h1>
+  <h1>Scroll down</h1>
+  <h1>Scroll down</h1>
+  <h1>Scroll down</h1>
+  <h1>Scroll down</h1>
+  <h1>Scroll down</h1>
+  <h1>Scroll down</h1>
+  <h1>Scroll down</h1>
+  <h3>See the yellow box is fixed </h3>
+</body>

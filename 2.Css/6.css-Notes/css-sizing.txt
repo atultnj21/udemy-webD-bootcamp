@@ -1,0 +1,19 @@
+font-size: 96px  :- static sizing
+font-size: 5em   :- dynamic sizing  em -> 1em = 16px
+font-size: 562%   :- dynamic sizing  100% =16px
+
+body{
+    font-size:2em;
+}
+h1{
+    font-size:5em;
+}
+
+h1 will become 7em
+
+when you are using em or % that value is inherited 
+it is not the same with px.
+
+we can use rem instead  which means ignore all of the parents 
+settings .
+root em does not get affected by the upstream changes

@@ -1,0 +1,35 @@
+there are two major font families 
+1.Serif
+2.sans-serif 
+we style code using monospace
+https://www.w3schools.com/css/css_font.asp
+
+when we set the font family for ex: 
+font-family: verdana ,sans-serif
+it first asks the browser to try and render 
+all the text in the verdana font , now if for some
+reason the browser or the OS that the user is using  
+does'nt have this font installed then it will 
+default to whatever sans serif font is installed
+on their system.
+
+web safe fonts...
+https://www.w3schools.com/cssref/css_websafe_fonts.asp
+
+no font is a 100% web safe 
+https://www.cssfontstack.com/
+
+font-embedding
+we can embedd font to our site by copying the link and 
+by pasting it into head tag. this link specifies a location
+if users dont have these fonts installed,then the browser
+will take them to this location and grab those fonts for them
+then we can just specify the font family in the style.
+https://fonts.google.com/
+
+https://www.flaticon.com/ 
+https://giphy.com/ 
+However GIFs are a terrible format 
+for storing video and are often huge 
+in size leading to slow page load times 
+and high data usage.

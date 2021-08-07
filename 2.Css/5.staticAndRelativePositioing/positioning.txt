@@ -1,0 +1,54 @@
+predefined rules
+
+1. Content is everything
+inline elements takes only as much width and
+as much height as the content
+span with long word - large width
+span with short word - short width
+
+even though block elements take 100% width
+the eight is still determined by the content
+
+2. Order comes from code
+the default layer order comes from code
+
+3. children sit on top of parent
+
+<div>
+<h1>a programmer</h1>
+</div>
+h1 is going to be on top of div
+
+position
+
+1. Static
+all html elements are static by default
+
+2. Relative
+position the element relative to how it should've
+been positioned
+
+img{
+position: relative;
+left: 30px;
+}
+it should be pushed 30px from the left of the previous
+position.
+
+coordinates - Top Bottom Left Right
+
+for ex: go to index.html
+
+3. Absolute
+
+I've got an image that's inside a div So the div is colored red and it has a relative
+Now our image is nested inside that div. And I've given it an absolute position.
+Now if I changed the right coordinate property to 30 pixels it's not going to shift
+left by 30 pixels. No. In fact it's going to shift to the right of the screen.
+
+with absolute positioning we are positioning the element.
+relative to its parent
+
+it affects the flow .
+
+4. Fixed

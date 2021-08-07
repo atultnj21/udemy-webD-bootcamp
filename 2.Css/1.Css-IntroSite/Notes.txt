@@ -1,0 +1,14 @@
+selector{
+property:value
+} 
+
+inline>internal>external
+
+  internal css -->
+  <style>
+  </style>
+
+inline-css
+<body style ="background-color: #EAF6F6;"> 
+
+colorhunt.co

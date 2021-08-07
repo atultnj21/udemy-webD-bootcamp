@@ -1,0 +1,492 @@
+• JavaScript 
+
+The Language that powers the web
+JavaScript is an interpreted Language
+
+open a new tab in chrome go into developer 
+and you can navigate to the javascript 
+console. Now this is pretty cool because it 
+allows you to start writing javascript straight 
+away and it will run them as you hit enter.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
+
+JavaScript Alerts
+alert("hello");
+
+hit Enter Chrome will run this line of code.
+And as you can see it brings up a pop up and 
+that pop up has the message of Hello. 
+Now if you hit OK the pop up will disappear.
+And that is the end of our alert.
+
+for writing two Alerts
+holding down shift and hitting enter.
+
+another way of writing javascript code that 
+can be executed inside chrome. So if you go 
+ahead and go to the next tab which is sources 
+and if you click on it you get taken to this
+tab. Now on the left corner you see this little 
+arrow. click on it and go to snippets.
+create a new snippet by clicking on this +new snippet 
+button call your script index.js write code in it
+once I'm done I can I can go over to the bottom right 
+corner here and I can press it to run my code.
+
+alert("hello");
+alert("world");
+it's not really going to work because it's not a 
+real command. So once it goes through hello and world 
+then code actually crashes and in the console.
+I get this error message that says uncaught reference 
+error say is not defined.
+
+  alert     ("Hello")   ;
+function    message     end
+
+Principles of Writing Consistent, Idiomatic JavaScript
+https://github.com/rwaldron/idiomatic.js
+
+• DataTypes
+
+•String
+   "Hello"
+•Numbers
+    123 
+•Boolean
+    true  false
+
+>2+3
+5
+>alert(2+3);
+undefined
+>typeof(5);
+"number"
+>typeof("Atul");
+"string"
+>typeof(true);
+"boolean"
+
+
+we can commit pieces data to the memory of the 
+computer we need to enable the user to enter the 
+information
+
+• prompt()
+
+>prompt("what is your name");
+"atul"
+
+prompt is pretty much identical to an alert
+But in this case it actually allows the user 
+to input something namely a piece of text.
+
+• variables
+
+Variable means anything that can vary. In JavaScript, 
+a variable stores the data value that can be changed 
+later on. Use the reserved keyword var to declare a 
+variable in JavaScript.
+
+• strings
+
+>var myName="Atul";
+undefined
+>myName
+"Atul"
+
+var       myName    =   "Atul"   ;
+keyword   name           value   end
+
+>myName="Atul Taneja";
+"Atul Taneja"
+>alert(myName);
+
+var Name = prompt("Enter your name");
+alert("your name is " + Name + "!");
+
+• string length
+
+we can easily figure out the number of characters
+in a string by simply tapping into its lenth property.
+
+word.length
+
+ex:
+>var name="Atul";
+>name.length
+<4
+
+var tweet=prompt("entertweet");
+var TweetCount=tweet.length;
+alert("you have written " + TweetCount +" characters, you have "+ (140-TweetCount)+ " characters remaining.");
+
+• slice(x,y)
+
+from x upto but not including y
+>var name ="atul";
+>name.slice(0,3);
+<index.js:1 "atu"
+
+var tweet=prompt("enter tweet");
+var tweetCount=tweet.length;
+var tweetunder140=tweet.slice(0,140);
+alert(tweetunder140);
+
+• changing cases 
+
+word.toUpperCase()
+word.toLowerCase()
+
+var name="atul";
+name=name.toUpperCase();
+alert(name);//ATUL
+
+alert("Hello, " + prompt("Enter your Name").toUpperCase());
+//Hello, ATUL 
+
+var name= prompt("Enter your Name");//aTUl
+alert("Hello, " +name.slice(0,1).toUpperCase()+name.slice(1).toLowerCase());
+//Hello, Atul
+
+var name= prompt("Enter your Name");
+name=name.slice(0,1).toUpperCase()+name.slice(1,name.length).toLowerCase();
+alert("Hello, " +name); 
+
+• Numbers
+
+var result =a+b;
+var result =a-b;
+var result =a*b;
+var result =a/b; 
+var result =a%b; modulo
+
+9%6//3 
+
+• Increment/decrement
+
+var x = 5;
+x++;
+//6
+
+var x = 5;
+x--;
+//4
+
+• Functions in JavaScript
+
+creating function
+
+function function_name(){
+
+}
+
+calling function
+
+function_name();
+
+function greet(){
+    var name= prompt("Enter your Name");
+    name=name.slice(0,1).toUpperCase()+name.slice(1,name.length).toLowerCase();
+    alert("Hello, " +name);
+}
+greet();
+
+Note:-
+• The console.log() method outputs a message to the web console
+
+http://stanford.edu/~cpiech/karel/ide.html
+
+/**
+ * Welcome to the Stanford Karel IDE.
+ * This is a free space for you to 
+ * write any Karel program you want.
+ **/
+function main(){
+   stepUpFourTimes();
+}
+function stepUp(){
+   move();
+   turnLeft();
+   move();
+   turnRight();
+}
+function stepUpFourTimes(){
+   stepUp();
+   stepUp();
+   stepUp();
+   stepUp();
+}
+
+/**
+ * Welcome to the Stanford Karel IDE.
+ * This is a free space for you to 
+ * write any Karel program you want.
+ **/
+function main(){
+   putBeeper();
+   stepUpFourTimes();
+}
+function diagonalMoveAndPutBeeper(){
+   move();
+   turnLeft();
+   move();
+   putBeeper();
+   turnRight();
+}
+function stepUpFourTimes(){
+   diagonalMoveAndPutBeeper();
+   diagonalMoveAndPutBeeper();
+   diagonalMoveAndPutBeeper();
+   diagonalMoveAndPutBeeper();
+}
+
+/**
+ * Welcome to the Stanford Karel IDE.
+ * This is a free space for you to 
+ * write any Karel program you want.
+ **/
+function main(){
+   drawChessBoardPatternOn5x5();
+}
+function beeperRight(){
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+}
+function goUpTurnLeft(){
+   turnLeft();
+   move();
+   turnLeft();
+}
+function beeperLeft(){
+   move();
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+}
+function goUpTurnRight(){
+   move();
+   turnRight();
+   move();
+   turnRight();
+}
+function drawChessBoardPatternOn5x5(){
+   beeperRight();
+   goUpTurnLeft();
+   beeperLeft();
+   goUpTurnRight();
+   beeperRight();
+   goUpTurnLeft();
+   beeperLeft();
+   goUpTurnRight();
+   beeperRight();
+}
+
+
+• Functions Parameters and Arguments
+
+function greet(name,age){
+    name=name.slice(0,1).toUpperCase()+name.slice(1,name.length).toLowerCase();
+    alert("Hello, " +name+" ,your Age is "+ age);
+}
+greet("aTuL",20);
+//Hello, Atul ,your Age is 20
+
+
+
+function calc(num1,num2){
+    result=Math.floor(num1/num2);
+    console.log("rounded result is: "+result);
+}
+calc(5,1.5)
+//rounded result is: 3
+ 
+
+• Functions Return Values
+
+function calc(num1,num2){
+    result=Math.floor(num1/num2);
+    return result;
+}
+var res=calc(5,1.5)
+console.log("rounded result is: "+res);
+//rounded result is: 3
+
+https://www.codeply.com/p/Rcbls3UdRg
+
+• BMI calculator
+codeply link
+https://www.codeply.com/p/z2xb3lXh53
+
+
+• Random Number Generation
+
+var n = Math.random();
+//0 to 0.9999999
+
+var n = Math.random();
+n=n*6;//0 to 5.99999994
+n= Math.floor(n)+1;//1to6
+console.log(n);
+//generates random no from 1 to 6.
+
+• if-else(control-flow)
+
+
+if(condition){
+   statement;
+}
+else{
+   statement;
+}
+
+• comparators and equality
+
+=== is equal to
+!== is not equal to
+> is greater than
+< is less than
+>= is greater or equal to
+<= is lesser or equal to
+&& And
+|| or
+!  Not
+
+var a=1;
+var b="1";
+typeof(a);
+"number"
+typeof(b);
+"string"
+if(a===b){
+    console.log("yes");
+}else{
+console.log("no");
+}
+// no
+
+var a=1;
+var b="1";
+typeof(a);
+"number"
+typeof(b);
+"string"
+if(a==b){
+    console.log("yes");
+}else{
+console.log("no");
+}
+// yes
+
+
+• stone paper scissor
+using if-else and Math.random()
+https://www.codeply.com/p/X1ACI2YyYs
+
+• for creating flowcharts online ->draw.io
+https://app.diagrams.net/
+
+• leap-year-challenge
+https://www.codeply.com/p/4uyRZRrDt7
+
+
+
+• Array collection JavaScript
+
+var Array=[1,2,3,4,5];
+var elementAt2ndPos = Array[1];
+
+• Methods
+
+Array.length;
+Array.includes(4);
+Array.push(element);//pushes the item at the end
+Array.pop();//removes the last element from the array.
+
+• guestList
+https://www.codeply.com/p/S3pQgn8tqF
+
+• fizzBuzz
+https://www.codeply.com/p/orj74iKu0Z
+
+• LunchCode
+https://www.codeply.com/p/eAinyLHV0U
+
+• Loops
+    • while Loops
+
+    while(something is true){
+       //Do something
+    }
+
+• 99 Bottle Lyrics
+https://www.codeply.com/p/NbPh7sKTFQ
+
+• For Loops
+for(i=0;i<2;i++){
+   //Do Something
+}
+
+• Fibonacci sequence
+https://replit.com/@atultnj21/FibonacciGenerator#script.js
+
+//Fibonacci Series
+function fibonacciGenerator(n){
+  var output = [];
+  if(n==1){
+    output=[0];
+  }
+  else if(n==2){
+    output=[0,1]
+  }
+  else{
+    output=[0,1];
+    for(var i=2;i<n;i++){
+    output.push(output[output.length-2]+output[output.length-1]);
+    }
+  }
+  return output;
+}
+
+var series = fibonacciGenerator(4);
+console.log(series);
+
+//[ 0, 1, 1, 2 ]
+
+
+• Fibonacci sequence
+https://replit.com/@atultnj21/Fibonacci#script.js
+
+var output=[];
+function generateFibonacci(n){
+  if(n==1){
+    output.push(0);
+  }else if(n==2){
+    output.push(0);
+    output.push(1);
+  }
+  else{
+    firstItem=0;
+    secondItem=1;
+    output.push(firstItem);
+    output.push(secondItem);
+    for(var i=2;i<n;i++){
+        nextItem=firstItem+secondItem;
+        firstItem=secondItem;
+        secondItem=nextItem;
+        output.push(nextItem);
+    }
+  }
+  return output;
+}
+
+var l = generateFibonacci(7);
+console.log(l);
