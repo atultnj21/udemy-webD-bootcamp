@@ -1,0 +1,222 @@
+• The Document Object Model 
+
+The Document Object Model Basically catalogs the web page into 
+individual elements that we can select and manipulate.
+The task of converting an HTML file into DOM is done by  the
+browser.  when it loads the web page
+
+It turns each of these elements and their associated
+data into a tree structure with a whole bunch of objects 
+that you can select and manipulate.
+
+       Document
+          |
+         HTML
+        /    \
+    Head      Body 
+     |         |
+    title     button
+    |          |
+    my         Alert
+    website 
+
+All of the elements in our HTML has been converted 
+into objects and their relationships to each other 
+mapped out in the tree diagram. So for example the 
+head section is a descendant of the Document object
+but the head and the body they're siblings they're 
+not descendants of each other and everything that 
+is contained inside HTML document is contained in an 
+object called the document.
+
+DOMhtmlTree
+firstElementChild
+Manipulation
+Method
+
+• objects inside the Dom can have properties and methods 
+
+properties describe something about the object and the 
+methods are things that the object can do.
+
+• Take an Analogy of Car
+• properties
+color
+Number of Seats
+Number of doors
+
+• methods
+brake()
+drive()
+park()
+
+• Get Property
+car.color;//red
+• Set Property
+car.color="cyan";
+• Call Method
+car.drive()
+
+• button
+• properties
+innerHTML
+style
+firstChild
+• Methods
+click()
+appendChild()
+setAttribute()
+
+• Selecting Html elements with javaScript
+
+•getElementsByTagName()
+•getElementsByClassName()
+•getElementById()//This will not return an array
+//Reason being on a web page every single Id should 
+be unique.
+
+> document.getElementById("title");
+< <h1 id=​"title">​Hello​</h1>​
+
+• Query Selector
+
+> document.querySelector("h1");
+< <h1 id=​"title">​Hello​</h1>​
+> document.querySelector("#title");
+< <h1 id=​"title">​Hello​</h1>​
+
+• Combining selectors
+ heirarchical selectors
+> document.querySelector("li a");
+< <a href="https://www.google.com">google</a>
+
+ Combined selectors
+> document.querySelector("li.item");
+< <li class=​"item">​::marker​"second"</li>​
+
+• what if you are selected matches more than one object?
+you only get back the first item in the document that satisfies that Selector
+
+document.querySelector(".list");
+<li class=​"list">​::marker​<a href=​"https:​/​/​www.google.com">​google​</a>​</li>​
+
+document.querySelectorAll(".list");
+NodeList(2) [li.list, li.list]
+
+• solution to the first challenge:-
+select the li element using javascript
+and change the third element html text.
+
+> document.getElementsByClassName("list");
+//this gives us an array we can access its elements using []
+< HTMLCollection(3) [li.list, li.list, li.list]
+> document.getElementsByClassName("list")[2].innerHTML="atul";
+< "atul"
+> document.getElementsByTagName("li")[2].innerHTML="atul";
+> "atul"
+
+
+• solution to second challenge:-
+select the anchor tag inside the list and change its
+color.
+
+document.querySelector("li a").style.color="cyan";
+"cyan"
+
+•Note:- 
+every single CSS property can be changed using 
+javascript but the property names might
+look a little bit different.
+because
+javascript naming conventions tend to be camel cased.
+
+ex:
+document.querySelector("h1").style.fontSize="5rem";
+"5rem"
+
+• HTML DOM Style Object Documentation
+https://www.w3schools.com/jsref/dom_obj_style.asp
+
+• Note:-
+with JavaScript then we actually have to specify 
+everything as a string even if it's
+a Number like line height or padding.
+
+• solution to third challenge:-
+select the button change its
+color.
+
+> document.querySelector("button").style.backgroundColor="cyan";
+< "cyan"
+
+• Note:-
+when we're writing code for websites in order to keep our code tidy 
+and easy to debug we have to keep in mind the idea of the separation 
+of concerns at all times.
+And what this means is that your age HTML is for content only and 
+Css is there to style your website ,and javascript is there for behavior.
+
+• class list property 
+
+> document.querySelector("button").classList;
+< DOMTokenList ["btn", value: "btn"]
+
+•add
+> document.querySelector("button").classList.add("invisible");
+
+this way we can keep all of our styles still inside our style sheet 
+but we can turn it on and off using javascript.
+
+•toggle
+> document.querySelector("button").classList.toggle("invisible");
+< false
+> document.querySelector("button").classList.toggle("invisible");
+< true
+> document.querySelector("button").classList.toggle("invisible");
+< false
+
+class list and it's a property of every dom object.
+So for example if we query for our button and we tap 
+into its class list property then you can see that
+it gives us a list of the classes that are attached 
+to this element that we found.
+So the element in this case is a button and you can 
+see that inside the class attribute we've only got
+a single class which is btn.
+Now once we have the list of classes then we can use 
+methods for example .add and we can add classes
+to the class list. in addition to add we can also 
+remove . Another Useful  method is Toggle and 
+Toggle simply means that if the class invisible 
+is already applied then remove it.
+And if it's not applied then apply it.
+
+• solution to fourth challenge:-
+document.querySelector("h1").classList.add("huge");
+
+• Text Manipulation and text content property
+
+> document.querySelector("h1").innerHTML;
+< "<strong>Hello</strong>"
+> document.querySelector("h1").textContent;
+<  "Hello"
+
+• Note:-
+if you select the H1 element and then use innerHTML then it will literally
+give you all of the HTML that is inside that element tags including any 
+other Html tags.
+So this means that if you use innerHTML You can also add  code on the fly.
+So for example if we wanted our hello to not only change its text to good bye.
+But we also wanted that word to be emphasized.
+
+> document.querySelector("h1").innerHTML="<em>Good Bye</em>";
+< "<em>Good Bye</em>"
+
+• Manipulating HTML Element Attributes
+
+> document.querySelector("a").attributes;
+< NamedNodeMap {0: href, href: href, length: 1}
+> document.querySelector("a").getAttribute("href");
+< "https://www.google.com"
+> document.querySelector("a").setAttribute("href","https://www.bing.com/");
+< undefined

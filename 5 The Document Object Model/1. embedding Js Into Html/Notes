@@ -1,0 +1,66 @@
+• Adding JavaScript to your websites
+
+javascript works really similarly as Css.
+So we can add INLINE javascript by simply
+adding an attribute into the tag.
+for example in the body I'm going to add 
+an attribute called onload and what this 
+means is that when the body of our Web site 
+gets loaded up then whatever javascript we
+place inside these two quotation marks will 
+get carried up.
+
+• Inline JavaScript
+
+ex:-
+<body onload="alert('Hello There!');">
+.....
+....
+...
+</body>
+
+• Internal JavaScript
+
+syntax:
+<script type="text/javascript">
+alert("Hello");
+</script>
+
+• External javascript
+
+syntax:
+    <!-- External Css -->
+    <script src="index.js" charset="utf-8"></script>
+
+• Note:-
+CSS You always want to put it right at the top just 
+below the title usually but with javascript it's the 
+opposite story because inside our script if we tried 
+to change an HTML element that does not yet exist 
+then it will fail.
+
+• ex:-
+
+index.js:-
+document.querySelector("h1").innerHTML="Good Bye";
+
+<script src="index.js" charset="utf-8"></script>
+<h1>Hello</h1>
+
+This will fail because the h1 element is 
+created  after the script is executed.
+so,best practice is always to put the script 
+right at the end just before the closing body tag.
+
+• Note:-
+added benefit of this is if you have a lot of javascript 
+code which usually is a little bit more time consuming 
+to run then at least all of the content of your web site 
+will have been loaded up for the users to see and the parts 
+that they can perceive like the script codes happens afterwards.
+So your website looks like it loads faster.
+Whereas if you put the script rather the top on the browser 
+has to go through all of the code before it can display all 
+of the elements that it might look like your web site is taking 
+a long time to load up which nobody has the patience for right now.
+

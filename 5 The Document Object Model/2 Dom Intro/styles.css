@@ -1,0 +1,9 @@
+/* Just for testing purpose check class list property 
+section of Notes */
+.invisible{
+    visibility:hidden;
+}
+.huge{
+    font-size: 6rem;
+    color: cyan;
+}
