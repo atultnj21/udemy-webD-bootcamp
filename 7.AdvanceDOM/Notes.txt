@@ -1,0 +1,129 @@
+• addEventListener
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+• handleClick() this is a straight-up method call
+so , we use handleClick .
+
+document.querySelector("button").addEventListener("click",handleClick)
+function handleClick(){
+    alert("I got clicked");
+}
+
+• Anonymous function
+document.querySelector("button").addEventListener("click",function(){
+    alert("I got clicked");
+})
+
+• Higher Order Functions and Passing Functions as Arguments
+  • calculator
+
+function add(num1,num2){
+return num1 + num2;
+}
+function multiply(num1,num2){
+    return num1 * num2;
+}
+function subtract(num1,num2){
+    return num1-num2;
+}
+function divide(num1,num2){
+    return num1/num2;
+}
+function modulus(num1,num2){
+    return num1%num2;
+}
+function calculator(num1,num2,operator){
+    return operator(num1,num2);
+}
+undefined
+calculator(6,2,modulus);
+0
+calculator(6,2,add);
+8
+calculator(6,2,divide);
+3
+calculator(6,2,subtract);
+4
+
+
+• Audio
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement
+
+• this
+ the button object that triggered the event 
+
+• Constructor Function
+   function HouseKeeper(name,age,hasWorkPermit,languages){
+       this.name=name;
+       this.age=age;
+       this.hasWorkPermit=hasWorkPermit;
+       this.languages=languages;
+   }
+
+> var  houseKeeper1 = new HouseKeeper("timmy",19,true,["french","english"]);
+> console.log(houseKeeper1.name);
+< timmy
+
+• Objects,Methods,Dot Notation
+
+ function HouseKeeper(name,age,hasWorkPermit,languages){
+       this.name=name;
+       this.age=age;
+       this.hasWorkPermit=hasWorkPermit;
+       this.languages=languages;
+       this.clean=function(){
+       alert("cleaning in progress by "+this.name);
+       };
+   }
+undefined
+var hs1= new HouseKeeper("john",25,true,["french","Spanish"]);
+undefined
+hs1.clean();
+cleaning in progress by john
+
+• Higher Order function & Callback function
+
+• Higher Order Functions
+    functions that are able to take functions as input
+
+document.addEventListener("keydown",respondToKey(event));
+function respondToKey(event){
+    console.log("key pressed. ");
+}
+
+In this case the addEventListener is a higher order function
+respondToKey(event) is a Callback Function.
+
+Callback Function is not called by us ,but it is called by 
+the object that experienced the event .
+And when that happens we can get it to get us some information
+that it will only know once the event happens.
+for ex in drum kit which button got clicked by the user.
+
+• Understanding Callback and How to respond to events 
+
+>function anotherAddEventListener(typeOfEvent,callback){
+    //detect event code
+    var eventThatHappened={
+        eventType:"keypress",
+        key:"p",
+        durationOfKeypress:2
+    }
+    if(eventThatHappened.eventType==typeOfEvent){
+        callback(eventThatHappened);
+    }
+}
+
+> anotherAddEventListener("keypress",function(event) {
+    console.log(event);
+});
+< {eventType: 'keypress', key: 'p', durationOfKeypress: 2}
+
+• Using debugger
+
+>debugger;
+ anotherAddEventListener("keypress",function(event) {
+    console.log(event);
+});
+•
+•
