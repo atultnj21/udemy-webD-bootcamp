@@ -1,0 +1,190 @@
+• jQuery is a JavaScript Library.
+
+document.querySelector("h1")
+In jQuery we can write this as 
+jQuery("h1") or $("h1")
+
+• How to Incorporate jQuery into websites
+
+  • we can download jQuery files
+  • or we can use jQuery with a CDN (content delivery network)
+
+  https://developers.google.com/speed/libraries#jquery
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+• Note:-
+    most popular option across the web is to use Google's CDN.
+    the beauty of using a popular CDN is that if a user has 
+    been to another Web site that uses the same CDN to fetch 
+    the jQuery library then they'll likely have it already 
+    cached and saved in their browser which means that when 
+    they want to load up your Web site they won't have
+    to fetch a fresh copy of jQuery.
+    They've already got it loaded and ready to go.
+It is important to keep the jQuery tag above the JavaScript.
+
+
+• safeguard for jQuery
+ $(document).ready(function(){
+     $("h1").css("color","#316B83");
+})
+
+• $
+it can be specific
+$("h1 .title")
+$("#header h1")
+
+• Manipulating styles with jQuery
+
+$("h1").css("color","red");
+$("h1").css("color","green");
+
+we can also get the value using this method
+
+> console.log($("h1").css("color"));
+< rgb(0,0,0) // black
+
+> console.log($("h1").css("font-size"));
+> 32px
+• Two properrty -> setting the value
+• one properrty -> getting the value
+
+$("h1").addClass("big-title");
+// adding multiple classes
+$("h1").addClass("big-title margin-50");
+$("h1").removeClass("big-title");
+// To check weather a element has a class or not .
+
+> $("h1").hasClass("margin-50");
+< true
+
+• Manipulating Text with jQuery
+$("h1").text("bye");
+$("button").html("<em>don't click me</em>"); 
+
+• Manipulating Attributes with jQuery
+<a href="https://www.google.com">Search</a>
+$("a").attr("href","https://www.yahoo.com")
+
+> $("h1").attr("class");
+< 'margin-50 big-title'
+
+• Adding Event Listenerswith jQuery
+$("h1").click(function(){
+    $("h1").css("color","purple");
+})
+
+for(var i=0;i<5;i++){
+    document.querySelectorAll("button")[i].addEventListener("click",function(){
+        document.querySelector("h1").style.color="purple";
+    });
+}
+
+// to do the above thing in jQuery
+$("button").click(function(){
+    $("h1").css("color","purple");
+})
+
+$(document).keypress(function(event){
+    $("h1").text(event.key);
+})
+
+$("h1").on("mouseover",function(){
+    $("h1").css("color","blue");
+})
+
+• Adding and Removing Elements with jQuery.
+
+$("h1").before("<button>new</button>");
+$("h1").after("<button>new</button>");
+$("h1").prepend("<button>new</button>");
+$("h1").append("<button>new</button>");
+
+the difference between a prepend and before is that 
+prepend will add your new html element element into 
+the item that you've selected just after the opening tag.
+
+• before method will add your new element before the opening 
+tag of the selected element.
+
+• After method will add your new element after the selected element.
+
+• prepend
+<h1><button>New</button>Hello</h1>
+• append
+<h1>Hello<button>New</button></h1>
+
+
+•  Website Animations with jQuery
+
+$("button").click(function(){
+    $("h1").hide();
+})
+
+$("button").click(function(){
+    $("h1").toggle();
+})
+
+
+$("button").click(function(){
+    $("h1").fadeOut();
+})
+
+
+$("button").click(function(){
+    $("h1").fadeIn();
+})
+
+$("button").click(function(){
+    $("h1").fadeToggle();
+})
+
+$("button").click(function(){
+    $("h1").slideUp();
+})
+
+$("button").click(function(){
+    $("h1").slideDown();
+})
+
+$("button").click(function(){
+    $("h1").slideToggle();
+})
+
+• Animate
+
+$("button").on("click",function(){
+    $("h1").animate({
+        opacity:0.5
+    })
+});
+
+$("button").on("click",function(){
+    $("h1").animate({
+        margin:20
+    })
+});
+
+$("button").on("click",function(){
+    $("h1").animate({
+        margin:"20%"
+    })
+});
+
+$("button").on("click",function(){
+    $("h1").slideUp().slideDown().animate({
+        opacity:0.5
+    })
+});
+
+this allows you to define some custom css
+that you want gradually to animate towards
+can only add css with numeric values.
+
+//This will not work
+$("button").on("click",function(){
+    $("h1").animate({
+        color:red
+    })
+});
