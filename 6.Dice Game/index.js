@@ -14,4 +14,5 @@ else{
 }
 function refreshPage(){
     location.reload();
-  }
+}
+
